@@ -14,6 +14,7 @@ import {
   AchievementEvent,
   Chat,
   ChatEvent, 
+  ConsoleResponse, 
   Login,
   LoginEvent,
   Logout,
@@ -27,6 +28,7 @@ import SocketResponse, { Responses } from './web-socket/responses';
 import { generateMinecraftServer } from './minecraft-server';
 import { generateWebSocketServer } from './web-socket/index';
 import { autoConfigureServer } from './utils/auto-configure-server';
+import { Console } from 'console';
 
 export interface ServerConfig {
   minecraftServer?: any,
@@ -199,6 +201,7 @@ export class Server {
    */
   handleConsole(message: string): void {
     if (message.match(EULA_CONSOLE_REGEX) !== null) {
+      ConsoleResponse.execute((this.minecraftServer as ScriptServer), this.socketConnection as connection, [ message ])
       autoConfigureServer(this);
     }
   }
