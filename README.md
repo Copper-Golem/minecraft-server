@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/andyruwruw/discord-managed-minecraft-server/main/documentation/images/banner.gif?token=ALDKK3UUONYOK3HVDBQ6SILBVH3QE"></img>
+  <img src="https://raw.githubusercontent.com/Copper-Golem/minecraft-server/main/documentation/images/banner.gif"></img>
 </p>
 
 <p align="center">
@@ -41,8 +41,6 @@ Players can also set their home coordinates and shop details to the Bot and easi
 
 # References
 
-- [Discord Managed Minecraft Server: Setup](https://github.com/andyruwruw/discord-managed-minecraft-server/blob/main/documentation/SETUP.md)
-- [Discord Managed Minecraft Server: Discord Bot](https://github.com/andyruwruw/discord-managed-minecraft-server/tree/main/discord-bot)
-- [Discord Managed Minecraft Server: Server](https://github.com/andyruwruw/discord-managed-minecraft-server/blob/main/server/README.md)
+- [Setup](https://github.com/andyruwruw/discord-managed-minecraft-server/blob/main/documentation/SETUP.md)
 - [garretjoecox/ScriptServer](https://github.com/garrettjoecox/scriptserver)
 - [Creating a Minecraft server with Oracle cloud computing service for free - The Ultimate Guide](https://www.reddit.com/r/admincraft/comments/qo78be/creating_a_minecraft_server_with_oracle_cloud/)

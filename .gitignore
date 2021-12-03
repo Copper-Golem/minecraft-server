@@ -9,3 +9,5 @@ server.properties
 usercache.json
 whitelist.json
 eula.txt
+dist
+server.jar

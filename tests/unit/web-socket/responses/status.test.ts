@@ -1,3 +1,6 @@
+// Packages
+import { ScriptServer } from '@scriptserver/core';
+
 // Local Imports
 import {
   Status,
@@ -66,23 +69,23 @@ describe('Status Event', () => {
 
   describe('execute()', () => {
     it('should check with java server for online status', async () => {
-      (mockServer.minecraftServer.rconConnection as MockRconConnection).util.getOnline.mockReturnValueOnce(ONLINE_DATA);
+      ((mockServer.minecraftServer as ScriptServer).rconConnection as MockRconConnection).util.getOnline.mockReturnValueOnce(ONLINE_DATA);
   
       await Status.execute(
         mockServer,
-        mockServer.minecraftServer,
+        mockServer.minecraftServer as ScriptServer,
         mockConnection,
       );
 
-      expect(mockServer.minecraftServer.rconConnection.util.getOnline).toHaveBeenCalled();
+      expect((mockServer.minecraftServer as ScriptServer).rconConnection.util.getOnline).toHaveBeenCalled();
     });
 
     it('should send online data back to socket', async () => {
-      (mockServer.minecraftServer.rconConnection as MockRconConnection).util.getOnline.mockReturnValueOnce(ONLINE_DATA);
+      ((mockServer.minecraftServer as ScriptServer).rconConnection as MockRconConnection).util.getOnline.mockReturnValueOnce(ONLINE_DATA);
 
       await Status.execute(
         mockServer,
-        mockServer.minecraftServer,
+        mockServer.minecraftServer as ScriptServer,
         mockConnection,
       );
 
