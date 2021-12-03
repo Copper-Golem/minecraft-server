@@ -209,7 +209,9 @@ export class Server {
    * @param {LoginEvent} event The login event.
    */
   handleLogin(event: LoginEvent): void {
-    Login.execute((this.minecraftServer as ScriptServer), this.socketConnection as connection, [ event ]);
+    if (this.socketConnection) {
+      Login.execute((this.minecraftServer as ScriptServer), this.socketConnection as connection, [ event ]);
+    }
   }
 
   /**
@@ -218,7 +220,9 @@ export class Server {
    * @param {LogoutEvent} event The logout event.
    */
   handleLogout(event: LogoutEvent): void {
-    Logout.execute((this.minecraftServer as ScriptServer), this.socketConnection as connection, [ event ]);
+    if (this.socketConnection) {
+      Logout.execute((this.minecraftServer as ScriptServer), this.socketConnection as connection, [ event ]);
+    }
   }
 
   /**
@@ -227,7 +231,9 @@ export class Server {
    * @param {ChatEvent} event The chat event.
    */
   handleChat(event: ChatEvent): void {
-    Chat.execute((this.minecraftServer as ScriptServer), this.socketConnection as connection, [ event ]);
+    if (this.socketConnection) {
+      Chat.execute((this.minecraftServer as ScriptServer), this.socketConnection as connection, [ event ]);
+    }
   }
 
   /**
@@ -236,7 +242,9 @@ export class Server {
    * @param {AchievementEvent} event The achievement event.
    */
   handleAchievement(event: AchievementEvent): void {
-    Achievement.execute((this.minecraftServer as ScriptServer), this.socketConnection as connection, [ event ]);
+    if (this.socketConnection) {
+      Achievement.execute((this.minecraftServer as ScriptServer), this.socketConnection as connection, [ event ]);
+    }
   }
 
   /**

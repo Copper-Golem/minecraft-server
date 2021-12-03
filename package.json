@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --build",
     "clean": "rimraf ./dist && echo 'All clean now!'",
-    "clean:minecraft": "rimraf json logs world banned-ips.json banned-players.json eula.txt ops.json server.properties usercache.json whitelist.json",
+    "clean:minecraft": "rimraf json logs world banned-ips.json banned-players.json eula.txt ops.json server.properties usercache.json whitelist.json fabric-server-launcher.properties fabriceloader.log",
     "start": "tsc --build && node dist/src/index.js",
     "test": "jest --forceExit --runInBand --colors",
     "test:verbose": "jest --verbose --forceExit --runInBand --colors",

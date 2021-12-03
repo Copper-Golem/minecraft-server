@@ -11,3 +11,7 @@ whitelist.json
 eula.txt
 dist
 server.jar
+libraries
+fabric-server-launch.jar
+fabric-server-launcher.properties
+fabricloader.log
