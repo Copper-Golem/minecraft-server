@@ -23,11 +23,13 @@ const callback = async (
   minecraftServer: ScriptServer,
   socketConnection: connection,
   event: AchievementEvent) => {
-  await socketConnection.send(JSON.stringify({
-    type: TYPE,
-    player: event.player,
-    achievement: event.achievement,
-  }));
+  if (socketConnection) {
+    await socketConnection.send(JSON.stringify({
+      type: TYPE,
+      player: event.player,
+      achievement: event.achievement,
+    }));
+  }
 };
 
 export const Achievement = new MinecraftResponse(callback);

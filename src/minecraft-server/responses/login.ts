@@ -26,10 +26,12 @@ const callback = async (
   event: LoginEvent) => {
   startTrackingPlayer(event.player);
 
-  await socketConnection.send(JSON.stringify({
-    type: TYPE,
-    player: event.player,
-  }));
+  if (socketConnection) {
+    await socketConnection.send(JSON.stringify({
+      type: TYPE,
+      player: event.player,
+    }));
+  }
 };
 
 export const Login = new MinecraftResponse(callback);

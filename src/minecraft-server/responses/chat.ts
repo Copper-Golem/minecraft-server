@@ -24,11 +24,13 @@ const callback = async (
   socketConnection: connection, 
   event: ChatEvent,
 ) => {
-  await socketConnection.send(JSON.stringify({
-    type: TYPE,
-    player: event.player,
-    message: event.message,
-  }));
+  if (socketConnection) {
+    await socketConnection.send(JSON.stringify({
+      type: TYPE,
+      player: event.player,
+      message: event.message,
+    }));
+  }
 };
 
 export const Chat = new MinecraftResponse(callback);

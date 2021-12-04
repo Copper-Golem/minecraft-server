@@ -200,8 +200,9 @@ export class Server {
    * @param {string} message Message in question.
    */
   handleConsole(message: string): void {
+    ConsoleResponse.execute((this.minecraftServer as ScriptServer), this.socketConnection as connection, [ message ]);
+
     if (message.match(EULA_CONSOLE_REGEX) !== null) {
-      ConsoleResponse.execute((this.minecraftServer as ScriptServer), this.socketConnection as connection, [ message ])
       autoConfigureServer(this);
     }
   }

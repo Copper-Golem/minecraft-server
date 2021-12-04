@@ -24,13 +24,15 @@ const callback = async (
   context: ContextObject): Promise<void> => {
   const data = await minecraftServer.rconConnection.util.getOnline();
   const type = 'id' in context ? context.id : TYPE;
-
-  await socketConnection.send(JSON.stringify({
-    type,
-    online: data.online,
-    players: data.players,
-    context,
-  }));
+  
+  if (socketConnection) {
+    await socketConnection.send(JSON.stringify({
+      type,
+      online: data.online,
+      players: data.players,
+      context,
+    }));
+  }
 };
 
 export const Status = new SocketResponse(TYPE, callback);

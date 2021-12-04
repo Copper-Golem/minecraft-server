@@ -30,13 +30,15 @@ const callback = async (
   const start = getStartTime(event.player);
   const time = stopTrackingPlayer(event.player);
 
-  await socketConnection.send(JSON.stringify({
-    type: TYPE,
-    player: event.player,
-    reason: event.reason,
-    timeSpent: time,
-    start: start,
-  }));
+  if (socketConnection) {
+    await socketConnection.send(JSON.stringify({
+      type: TYPE,
+      player: event.player,
+      reason: event.reason,
+      timeSpent: time,
+      start: start,
+    }));
+  }
 };
 
 export const Logout = new MinecraftResponse(callback);

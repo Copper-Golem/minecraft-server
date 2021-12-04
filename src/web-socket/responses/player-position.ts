@@ -30,22 +30,26 @@ const callback = async (
   if (await minecraftServer.rconConnection.util.isOnline(player)) {
     const data = await minecraftServer.rconConnection.util.getLocation(player);
 
-    return socketConnection.send(JSON.stringify({
+    if (socketConnection) {
+      return socketConnection.send(JSON.stringify({
+        type,
+        player,
+        online: true,
+        location: data,
+        context,
+      }));
+    }
+  }
+
+  if (socketConnection) {
+    socketConnection.send(JSON.stringify({
       type,
       player,
-      online: true,
-      location: data,
+      online: false,
+      location: null,
       context,
     }));
   }
-
-  return socketConnection.send(JSON.stringify({
-    type,
-    player,
-    online: false,
-    location: null,
-    context,
-  }));
 };
 
 export const PlayerPosition = new SocketResponse(TYPE, callback);

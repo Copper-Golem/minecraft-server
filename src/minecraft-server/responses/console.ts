@@ -19,10 +19,12 @@ const callback = async (
   socketConnection: connection, 
   message: string,
 ) => {
-  await socketConnection.send(JSON.stringify({
-    type: TYPE,
-    message,
-  }));
+  if (socketConnection) {
+    await socketConnection.send(JSON.stringify({
+      type: TYPE,
+      message,
+    }));
+  }
 };
 
 export const ConsoleResponse = new MinecraftResponse(callback);
