@@ -24,9 +24,9 @@ import {
   CONSOLE_DEFAULT_PREFIX,
   EULA_CONSOLE_REGEX,
 } from './config';
-import SocketResponse, { Responses } from './web-socket/responses';
+import SocketResponse, { Responses } from './websocket/responses';
 import { generateMinecraftServer } from './minecraft-server';
-import { generateWebSocketServer } from './web-socket/index';
+import { generateWebSocketServer } from './websocket/index';
 import { autoConfigureServer } from './utils/auto-configure-server';
 import { Console } from 'console';
 

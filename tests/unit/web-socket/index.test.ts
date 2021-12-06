@@ -2,7 +2,7 @@
 import { server as WebSocketServer } from 'websocket';
 
 // Local Imports
-import { generateWebSocketServer } from '../../../src/web-socket';
+import { generateWebSocketServer } from '../../../src/websocket';
 
 /**
  * A test suite for the web-socket generator.

@@ -6,7 +6,7 @@ import { Location as ScriptServerLocation } from '@scriptserver/util';
 import {
   PlayerPosition,
   TYPE,
-} from '../../../../src/web-socket/responses/player-position';
+} from '../../../../src/websocket/responses/player-position';
 import {
   MockMinecraftServer,
   MockRconConnection,

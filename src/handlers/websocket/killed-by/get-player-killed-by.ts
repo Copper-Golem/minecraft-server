@@ -1,0 +1,1 @@
+// Retrieves a list of every mob the player has died to and how many times.

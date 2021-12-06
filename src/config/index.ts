@@ -2,7 +2,7 @@
 import dotenv from 'dotenv';
 
 // Local Imports
-import { rconPassword } from '../utils/rcon-password';
+import { rconPassword } from '../helpers/rcon-password';
 
 dotenv.config();
 

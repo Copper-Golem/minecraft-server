@@ -5,7 +5,7 @@ import { ScriptServer } from '@scriptserver/core';
 import {
   Status,
   TYPE,
-} from '../../../../src/web-socket/responses/status';
+} from '../../../../src/websocket/responses/status';
 import {
   MockMinecraftServer,
   MockRconConnection,

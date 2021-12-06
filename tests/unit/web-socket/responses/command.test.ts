@@ -2,7 +2,7 @@
 import {
   Command,
   TYPE,
-} from '../../../../src/web-socket/responses/command';
+} from '../../../../src/websocket/responses/command';
 import { MockServer } from '../../../utils/mock-server';
 import { MockMinecraftServer } from '../../../utils/mock-minecraft-server';
 import { MockConnection, MockWebSocketServer } from '../../../utils/mock-web-socket-server';

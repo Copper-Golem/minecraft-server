@@ -2,9 +2,6 @@
 import http from 'http';
 import { server as WebSocketServer } from 'websocket';
 
-// Local Imports
-import { WEBSOCKET_PORT } from '../config';
-
 /**
  * Starts server and keeps checking if it is ready.
  *
@@ -12,7 +9,7 @@ import { WEBSOCKET_PORT } from '../config';
  * @param {number} port Desired port the server should run on.
  * @returns {WebSocketServer} The server resulting.
  */
-const waitForServerToStart = async (server: http.Server | null, port: number): Promise<WebSocketServer> => {
+export const waitForServerToStart = async (server: http.Server | null, port: number): Promise<WebSocketServer> => {
   return new Promise(function (resolve) {
     setTimeout(function () {
       if (server === null) {
@@ -36,16 +33,4 @@ const waitForServerToStart = async (server: http.Server | null, port: number): P
       waitForServerToStart(server, port);
     }, 5);
   }); 
-};
-
-/**
- * Creates and starts a new websocket server.
- *
- * @returns {WebSocketServer}
- */
-export const generateWebSocketServer = async (port: number | undefined = undefined): Promise<WebSocketServer> => {
-  const server: http.Server | null = null;
-  const resultingPort = port != undefined ? port : parseInt(WEBSOCKET_PORT as string, 10);
-  
-  return waitForServerToStart(server, resultingPort);
 };

@@ -1,0 +1,1 @@
+// Retrieves the current position of a player.

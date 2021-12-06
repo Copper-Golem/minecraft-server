@@ -1,0 +1,1 @@
+// Retrieves a list and number of picked-up items for a player.
